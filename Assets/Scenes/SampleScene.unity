@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -248,7 +248,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 10, y: 10}
   posicionInicio: 0
-  sala: {fileID: 6760924550799266636, guid: 9dafe5dfa52f32f4b81f7986633b2f20, type: 3}
+  sala:
+  - {fileID: 6760924550799266636, guid: da676985f010b5d4c8747bbec85da561, type: 3}
+  - {fileID: 6760924550799266636, guid: 9dafe5dfa52f32f4b81f7986633b2f20, type: 3}
+  - {fileID: 6760924550799266636, guid: 6545934bbd21136448d30de4a7ab4555, type: 3}
+  - {fileID: 6760924550799266636, guid: 28446d30bbacf684697b7312f9af98d0, type: 3}
+  - {fileID: 6760924550799266636, guid: 05cb3a0866751d24080cac37bfa767c7, type: 3}
+  - {fileID: 6760924550799266636, guid: 5cfb4ac3e2212fc4ba328320d51528e1, type: 3}
+  - {fileID: 6760924550799266636, guid: b9f855390eaf2324e9ba4174fb225c42, type: 3}
   dimension: {x: 10, y: 10}
 --- !u!4 &808264623
 Transform:

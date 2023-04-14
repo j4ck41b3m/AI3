@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +13,15 @@ public class GeneradorMazmorra : MonoBehaviour
     }
     public Vector2Int size;
     public int posicionInicio = 0;
-    public GameObject sala;
+    public GameObject[] sala;
     public Vector2Int dimension;
     List<Celda> tablero;
+    public int numsala, colorsala;
 
     void Start()
     {
+        numsala = 0;
+
         GeneradorLaberinto();
     }
 
@@ -30,8 +34,13 @@ public class GeneradorMazmorra : MonoBehaviour
         {
             for (int j = 0; j < size.y; j++)
             {
-                var nuevaSala = Instantiate(sala, new Vector3(i * dimension.x, 0, j * dimension.y), Quaternion.identity, transform).GetComponent<ComportamientoSala>();
-                nuevaSala.UpdateSala(tablero[i + j * size.x].status);
+                
+                    colorsala = Mathf.RoundToInt(((i + j) * 7)/20);
+                    var nuevaSala = Instantiate(sala[colorsala], new Vector3(i * dimension.x, 0, j * dimension.y), Quaternion.identity, transform).GetComponent<ComportamientoSala>();
+                    nuevaSala.UpdateSala(tablero[i + j * size.x].status);
+                
+                //int h = Random.Range(0, 7);
+                
             }
         }
     }
@@ -77,7 +86,7 @@ public class GeneradorMazmorra : MonoBehaviour
             else
             {
                 camino.Push(celdaActual);
-                int nuevaCelda = vecinos[Random.Range(0, vecinos.Count)];
+                int nuevaCelda = vecinos[UnityEngine.Random.Range(0, vecinos.Count)];
 
                 if (nuevaCelda > celdaActual)
                 {
